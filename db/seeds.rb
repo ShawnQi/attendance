@@ -1,7 +1,48 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+users = [
+  ['曾兴彬',111],
+  ['程丹璐',46],
+  ['付小龙',126],
+  ['龚璇',142],
+  ['龚志斌',104],
+  ['胡晨航',148],
+  ['胡青月',86],
+  ['黄爽',119],
+  ['蒋雨芯',137],
+  ['金荻',38],
+  ['康敏',47],
+  ['雷梦瑶',16],
+  ['李曾梦雪',50],
+  ['李洲',117],
+  ['梁根榕',146],
+  ['廖小雪',149],
+  ['刘俊逸',101],
+  ['罗海燕',131],
+  ['齐鹏先',138],
+  ['谭小青',29],
+  ['汤艺珠',113],
+  ['王博果',145],
+  ['王娟',7],
+  ['王欣欣',118],
+  ['吴波',127],
+  ['伍龙辉',79],
+  ['熊栋',135],
+  ['徐茜',88],
+  ['严燕',100],
+  ['易宗权',110],
+  ['尹恒',144],
+  ['庸欢俊',133],
+  ['张隽欢',130],
+  ['张茜',151],
+  ['张宪伟',152],
+  ['张香兰',83],
+  ['张瑶',58],
+  ['张卓',141],
+  ['周琴',10],
+  ['周雪莹',136],
+]
+users.to_h.each{|k,v|
+  user = User.find_or_create_by(name: k)
+  puts "创建用户#{user.name}"
+  unit = Attendance::Unit.create(number: v, user_id: user.id)
+  puts "创建考勤单元#{unit.number}"
+}

@@ -1,0 +1,12 @@
+.container
+  h1.my-4 = "关于考勤系统"
+  p = '这里是简介'
+
+  .row
+    .col-lg-12
+      h2.my-4 = '员工列表'
+    - 12.times.each do |user|
+      .col-lg-4.col-sm-6.text-center.mb-4
+        img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+        h3 = '豆豆'
+        p = '一句话简介'

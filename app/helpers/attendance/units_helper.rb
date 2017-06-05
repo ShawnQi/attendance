@@ -1,0 +1,2 @@
+module Attendance::UnitsHelper
+end

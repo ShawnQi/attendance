@@ -11,6 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170504080408) do
+
+  create_table "attendance_records", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "date_type",      limit: 4
+    t.datetime "sign_in_at"
+    t.datetime "sign_out_at"
+    t.datetime "late_at"
+    t.datetime "early_at"
+    t.boolean  "absenteeism_on",             default: false, null: false
+    t.string   "overtime",       limit: 255
+    t.string   "worktime",       limit: 255
+    t.boolean  "sign_in_on",                 default: false, null: false
+    t.boolean  "sign_out_on",                default: false, null: false
+    t.string   "department",     limit: 255
+    t.integer  "unit_id",        limit: 4
+    t.integer  "lock_version",   limit: 4,   default: 0,     null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
+
+  create_table "attendance_units", force: :cascade do |t|
+    t.integer  "number",       limit: 4
+    t.integer  "user_id",      limit: 4
+    t.integer  "lock_version", limit: 4, default: 0, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.integer  "units_count",  limit: 4,   default: 0, null: false
+    t.integer  "lock_version", limit: 4,   default: 0, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
 
 end

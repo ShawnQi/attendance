@@ -8,6 +8,12 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+# slim
+gem 'slim'
+# excel插件
+gem 'rubyXL', '3.3.23'
+# 迁移文件按照目录展示
+gem 'modular_migration', '~> 0.0.4'
 
 group :development, :test do
   gem 'better_errors'
