@@ -1,0 +1,7 @@
+production:
+  domain: ''
+  deploy_to: /www/xxx
+  rvm_path: /usr/local/rvm/bin/rvm
+  repository: git@xxxx
+  branch: master
+  rails_env: production
